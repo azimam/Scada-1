@@ -1,0 +1,6 @@
+SELECT
+	NAME AS "   MOV \n  Name", INPRESSURE AS "    Upstream \nPressure (PSI)", OUTPRESSURE AS " Downstream \nPressure (PSI)", ACPOWER AS "   AC \nPower", BATTERY AS "Battery \n (Volt)", PLCSTATUS AS "PLC \n Status", REMOTESTATUS AS "Remote \n Status", CASE VALVESTATUS WHEN 1 THEN 65280 WHEN 0 THEN 255 WHEN 2 THEN 65535 ELSE 16711935 END AS "~{BACKGROUND01}", ' ' AS "~Status"
+FROM
+	LIST
+WHERE
+	( LIST.FULLNAME LIKE '%%%' )
